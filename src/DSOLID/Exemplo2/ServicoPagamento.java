@@ -1,11 +1,15 @@
 package DSOLID.Exemplo2;
 
 public class ServicoPagamento {
-    private ConsoleLogger logger = new ConsoleLogger();
+    private ILogger iLogger;
+
+    public ServicoPagamento(ILogger iLogger) {
+        this.iLogger = iLogger;
+    }
 
     public void pagar(double valor) {
-        // Lógica de pagamento
-        logger.log("Pagamento de R$" + valor + " realizado com sucesso!");
+        // Lógica de pagamento, com dependência indireta
+        iLogger.log("Pagamento de R$" + valor + " realizado com sucesso!");
     }
 }
 
