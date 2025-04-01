@@ -3,14 +3,15 @@ package DSOLID.Exemplo1;
 import DSOLID.Exemplo1.MySQLConnection;
 
 public class UsuarioDAO {
-    private MySQLConnection mySQLConnection;
+    private IConexaoBanco iConexaoBanco;
 
-    public UsuarioDAO() {
-        this.mySQLConnection = new MySQLConnection(); // Dependência direta
+    public UsuarioDAO(IConexaoBanco iConexaoBanco) {
+        this.iConexaoBanco = iConexaoBanco; // Dependência indireta
     }
 
     public void salvarUsuario(String nome) {
-        mySQLConnection.connect();
+        iConexaoBanco.connect();
         System.out.println("Salvando usuário: " + nome);
     }
 }
+
