@@ -1,10 +1,9 @@
 package OSolid.Exemplo2;
 
-public class MetodoPix {
+public class MetodoPix implements ISistemaPagamento{
+    @Override
+    public void pagar (double valor) {
+        System.out.println("Pagamento de R$" + valor + " realizado via PIX.");
 
-    public void metodoPagamento (double valor, String metodo) {
-        if ("PIX".equalsIgnoreCase(metodo)) {
-            System.out.println("Pagamento de R$" + valor + " realizado via PIX.");
-        }
     }
 }

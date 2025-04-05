@@ -1,8 +1,8 @@
 package OSolid.Exemplo2;
 
 public class SistemaPagamento {
-    public double pagar(double valor, ISistemaPagamento metodoPagamento) {
-        return ISistemaPagamento.metodoPagamento(valor, metodo);
+    public void acionarpagamento(double valor, ISistemaPagamento metodoPagamento) {
+        metodoPagamento.pagar(valor);
     }
 }
 
